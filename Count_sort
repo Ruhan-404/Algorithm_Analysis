@@ -1,0 +1,15 @@
+void count_sort(vector<int>&v)
+{
+	int sz = v.size();
+	int mx = *max_element(v.begin(),v.end());
+	vector<int>temp(mx+1,0);
+	for(auto i:v)temp[i]++;
+	int k = 0;
+	for(int i=0;i<=mx;i++)
+	{
+		while(temp[i]--)
+		{
+			v[k++]=i;
+		}
+	}
+}
